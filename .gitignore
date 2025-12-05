@@ -1,0 +1,9 @@
+/target
+ref*
+sim.bam
+sim.bam.bai
+reads*
+R1.fq
+R2.fq
+NA12878.mapped.ILLUMINA.bwa.CEU.high_coverage_pcr_free.20130906.bam
+translocations*
