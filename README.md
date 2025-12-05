@@ -130,7 +130,8 @@ Load the file in IGV to inspect.
 
 ## Notes
 
-- BAM does **not** need to be sorted.
+- BAM does **not** need to be sorted.
+- BAM does **not** need to be indexed.
 - This tool is most meaningful for:
   - WGS / WES
   - cancer sequencing
