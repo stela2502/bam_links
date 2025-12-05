@@ -130,7 +130,6 @@ Load the file in IGV to inspect.
 
 ## Notes
 
-- The input BAM must be indexed (`.bai` present).
 - This tool is most meaningful for:
   - WGS / WES
   - cancer sequencing

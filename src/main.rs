@@ -114,16 +114,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             let chr2 = String::from_utf8_lossy(header_view.tid2name(mtid as u32));
 
             writer.write(&rec)?;
-
-            println!(
-                "{}\t{}:{}\t{}:{}\t{}",
-                qname,
-                chr1,
-                pos,
-                chr2,
-                mpos,
-                if is_inter { "INTERCHR" } else { "LONGRANGE" }
-            );
         }
     }
     pb.finish_with_message("Done.");

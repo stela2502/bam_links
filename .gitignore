@@ -7,3 +7,4 @@ R1.fq
 R2.fq
 NA12878.mapped.ILLUMINA.bwa.CEU.high_coverage_pcr_free.20130906.bam
 translocations*
+positive_control_real.bam
