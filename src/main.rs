@@ -99,19 +99,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
 
         let qname = String::from_utf8_lossy(rec.qname()).to_string();
-        if !seen.insert(qname.clone()) {
-            continue; // already reported
-        }
-
-        if is_inter {
-            inter_count += 1;
-        } else {
-            long_count += 1;
+        if seen.insert(qname.clone()) {
+            // Count only for the first in the pair
+            if is_inter {
+                inter_count += 1;
+            } else {
+                long_count += 1;
+            }
+        }else {
+            // Second mate → cleanup
+            seen.remove(&qname);
         }
 
         if !args.summary_only {
-            let chr1 = String::from_utf8_lossy(header_view.tid2name(tid as u32));
-            let chr2 = String::from_utf8_lossy(header_view.tid2name(mtid as u32));
+            //let chr1 = String::from_utf8_lossy(header_view.tid2name(tid as u32));
+            //let chr2 = String::from_utf8_lossy(header_view.tid2name(mtid as u32));
 
             writer.write(&rec)?;
         }
